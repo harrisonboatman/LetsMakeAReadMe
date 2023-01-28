@@ -1,9 +1,13 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs')
-const mitLic = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
-const eclipseLic = '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)'
-const gnuLic = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
+const licenses = ['[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
+    '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)',
+    '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
+]
+// const mitLic = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
+// const eclipseLic = '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)'
+// const gnuLic = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
 
 const READMEgenerater = ({ title, description, install, usage, contribution, test, license, username, email }) =>
     `# ${title}  ${mitLic}
@@ -34,15 +38,19 @@ ${contribution}
 ## License
 
 The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-
+${license}
 ---
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
 
 
 ## Tests
 
-${test}`
+${test}
+
+##Contact Me!
+
+My Github username is: ${username}
+My email is: ${email}
+`
 
 inquirer.prompt([
 
@@ -82,16 +90,25 @@ inquirer.prompt([
         message: 'Please select which license you will use for your application',
         choices:
             [
-                {name:'MIT',
-                value:'This project has been licensed under the MIT License'},
-                {name: 'GNU',
-                value:  'This project has been licensed under the GNU License'},
-                {name: 'Eclipse',
-                value:'This project has been licensed under the Eclipse License'},
+                {
+                    name: 'MIT',
+                    value: 'This project has been licensed under the MIT License'
+                },
+                {
+                    name: 'GNU',
+                    value: 'This project has been licensed under the GNU License'
+                },
+                {
+                    name: 'Eclipse',
+                    value: 'This project has been licensed under the Eclipse License'
+                },
 
-            ]
-        
-            
+            ],
+
+
+
+
+
     },
     {
         type: 'input',
@@ -111,16 +128,18 @@ inquirer.prompt([
 
 
 ])
+    .then((data) => {
+        console.log(data)
+        var licChoice
+        if (data.license.includes('MIT')) {
+            licChoice = licenses[0];
+        } else if (data.license.includes('GNU')) {
+            licChoice = licenses[1]
+        } else {
+            licChoice = licenses[2];
+        };
+        fs.writeFile('README.md', READMEgenerater(data), (err) =>
+        err ? console.log(err) : console.log('SUCCESS WOOOOOOOOOOOOO'))
+    }
+    );
 
-
-// TODO: Create an array of questions for user input
-const questions = [];
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
-
-// TODO: Create a function to initialize app
-function init() { }
-
-// Function call to initialize app
-init();
