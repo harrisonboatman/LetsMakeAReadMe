@@ -1,41 +1,35 @@
-#   [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+# Let's Make A README!
 
 ## Description
 
-asdf 
+This application will allow the user to answer a multitude of questions with their responses generating a README file similar to this one. 
 
-## Table of Contents
+## Table of Contents 
+
+
 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-- [Tests](#tests)
-- [Questions](#questions)
 
 ## Installation
 
-ff
+Must have node installed, and run 'NPM I' in the console.
 
 ## Usage
 
-f
+
 
 ## Credits
 
-f
+Utilized Node, FS, and Inquirer during this program.
 
 ## License
 
-This project has been licensed under the GNU License
----
+This program was made under the MIT License
 
-
-## Tests
-
-f
 
 ## Questions
 
-My Github username is: f
-My email is: f
+Feel free to contact me at hrry.boatman2@gmail.com
