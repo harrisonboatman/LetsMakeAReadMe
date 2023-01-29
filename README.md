@@ -19,7 +19,7 @@ Must have node installed, and run 'NPM I' in the console.
 
 ## Usage
 
-
+(./assets/ExampleGIF.gif)
 
 ## Credits
 
