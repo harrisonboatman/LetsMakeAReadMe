@@ -1,5 +1,39 @@
+const blank = `# Let's Make A README!
 
-const blank = ''
+## Description
+
+This application will allow the user to answer a multitude of questions with their responses generating a README file similar to this one. 
+
+## Table of Contents 
+
+
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+
+## Installation
+
+Must have node installed, and run 'NPM I' in the console.
+
+## Usage
+
+
+
+## Credits
+
+Utilized Node, FS, and Inquirer during this program.
+
+## License
+
+This program was made under the MIT License
+
+
+## Questions
+
+Feel free to contact me at hrry.boatman2@gmail.com
+`
 const inquirer = require('inquirer');
 const fs = require('fs');
 // Array of license badges for use after inquirer
@@ -9,7 +43,7 @@ const licenses = ['[![License: MIT](https://img.shields.io/badge/License-MIT-yel
 ]
 // Initializes README to be blank upon launch
 fs.writeFile('README.md', blank, (err) => err ? console.log(err) : console.log())
-   
+
 
 
 const READMEgenerater = ({ title, description, install, usage, contribution, test, license, username, email }, licChoice) =>
@@ -136,15 +170,15 @@ inquirer.prompt([
         console.log(data)
         var licChoice
         if (data.license.includes('MIT')) {
-             licChoice = licenses[0];
+            licChoice = licenses[0];
         } else if (data.license.includes('GNU')) {
-             licChoice = licenses[1]
+            licChoice = licenses[2]
         } else {
-             licChoice = licenses[2];
+            licChoice = licenses[1];
         };
         console.log(licChoice)
         fs.writeFile('README.md', READMEgenerater(data, licChoice), (err) =>
-        err ? console.log(err) : console.log('SUCCESS WOOOOOOOOOOOOO'))
+            err ? console.log(err) : console.log('SUCCESS WOOOOOOOOOOOOO'))
     }
     );
 

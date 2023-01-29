@@ -1,8 +1,8 @@
-# Amazing  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+#   [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ## Description
 
-fd 
+asdf 
 
 ## Table of Contents
 
@@ -15,27 +15,27 @@ fd
 
 ## Installation
 
-s
+ff
 
 ## Usage
 
-a
+f
 
 ## Credits
 
-s
+f
 
 ## License
 
-This project has been licensed under the MIT License
+This project has been licensed under the GNU License
 ---
 
 
 ## Tests
 
-d
+f
 
-##Questions
+## Questions
 
 My Github username is: f
-My email is: g
+My email is: f
