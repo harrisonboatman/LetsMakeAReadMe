@@ -1,8 +1,8 @@
-# name  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Amazing  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-f 
+fd 
 
 ## Table of Contents
 
@@ -10,18 +10,20 @@ f
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
+- [Tests](#tests)
+- [Questions](#questions)
 
 ## Installation
 
-f
+s
 
 ## Usage
 
-f
+a
 
 ## Credits
 
-f
+s
 
 ## License
 
@@ -31,9 +33,9 @@ This project has been licensed under the MIT License
 
 ## Tests
 
-f
+d
 
-##Contact Me!
+##Questions
 
 My Github username is: f
-My email is: f
+My email is: g

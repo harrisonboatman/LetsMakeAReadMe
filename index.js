@@ -25,6 +25,8 @@ ${description}
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
+- [Tests](#tests)
+- [Questions](#questions)
 
 ## Installation
 
@@ -48,7 +50,7 @@ ${license}
 
 ${test}
 
-##Contact Me!
+## Questions
 
 My Github username is: ${username}
 My email is: ${email}
