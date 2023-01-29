@@ -1,22 +1,16 @@
-// TODO: Include packages needed for this application
 
 const blank = ''
 const inquirer = require('inquirer');
-const fs = require('fs')
+const fs = require('fs');
+// Array of license badges for use after inquirer
 const licenses = ['[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
     '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)',
     '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
 ]
- var init= () => {
+// Initializes README to be blank upon launch
+fs.writeFile('README.md', blank, (err) => err ? console.log(err) : console.log())
    
-    fs.writeFile('README.md', blank), (err) => err ? console.log(err) : console.log('initialized')
-   
-       
-   }
-   init();
-// const mitLic = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
-// const eclipseLic = '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)'
-// const gnuLic = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
+
 
 const READMEgenerater = ({ title, description, install, usage, contribution, test, license, username, email }, licChoice) =>
     `# ${title}  ${licChoice}
