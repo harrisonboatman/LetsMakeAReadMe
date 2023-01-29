@@ -1,16 +1,25 @@
 // TODO: Include packages needed for this application
+
+const blank = ''
 const inquirer = require('inquirer');
 const fs = require('fs')
 const licenses = ['[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
     '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)',
     '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
 ]
+ var init= () => {
+   
+    fs.writeFile('README.md', blank), (err) => err ? console.log(err) : console.log('initialized')
+   
+       
+   }
+   init();
 // const mitLic = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
 // const eclipseLic = '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)'
 // const gnuLic = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
 
-const READMEgenerater = ({ title, description, install, usage, contribution, test, license, username, email }) =>
-    `# ${title}  ${mitLic}
+const READMEgenerater = ({ title, description, install, usage, contribution, test, license, username, email }, licChoice) =>
+    `# ${title}  ${licChoice}
 
 ## Description
 
@@ -37,7 +46,6 @@ ${contribution}
 
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
 ${license}
 ---
 
@@ -132,13 +140,14 @@ inquirer.prompt([
         console.log(data)
         var licChoice
         if (data.license.includes('MIT')) {
-            licChoice = licenses[0];
+             licChoice = licenses[0];
         } else if (data.license.includes('GNU')) {
-            licChoice = licenses[1]
+             licChoice = licenses[1]
         } else {
-            licChoice = licenses[2];
+             licChoice = licenses[2];
         };
-        fs.writeFile('README.md', READMEgenerater(data), (err) =>
+        console.log(licChoice)
+        fs.writeFile('README.md', READMEgenerater(data, licChoice), (err) =>
         err ? console.log(err) : console.log('SUCCESS WOOOOOOOOOOOOO'))
     }
     );
